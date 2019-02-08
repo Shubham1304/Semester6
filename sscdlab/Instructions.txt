@@ -1,0 +1,7 @@
+Instructions to execute 1b
+
+gedit fl.l
+lex fl.l
+gedit fl.y
+yacc -d fl.y
+cc lex.yy.c y.tab.c -ll
