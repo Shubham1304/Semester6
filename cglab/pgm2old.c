@@ -23,7 +23,7 @@ void lineBres(int x0,int y0,int xEnd,int yEnd)
 		x=x0;
 		y=y0;
 	}
-	setPixel(x,y);
+	setPixel(x,y	);
 	while(x<xEnd)
 	{
 		x++;
@@ -60,6 +60,68 @@ int main (int argc, char ** argv)
 	glutMainLoop();
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
