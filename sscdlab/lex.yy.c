@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 4
-#define YY_END_OF_BUFFER 5
+#define YY_NUM_RULES 6
+#define YY_END_OF_BUFFER 7
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,9 +360,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[9] =
+static const flex_int16_t yy_accept[16] =
     {   0,
-        0,    0,    5,    2,    3,    1,    1,    0
+        0,    0,    0,    0,    7,    6,    6,    3,    4,    3,
+        2,    1,    5,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -371,8 +372,8 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    1,    1,    1,
+        1,    3,    1,    1,    1,    1,    4,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -397,29 +398,33 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[4] =
+static const YY_CHAR yy_meta[5] =
     {   0,
-        1,    1,    2
+        1,    2,    1,    3
     } ;
 
-static const flex_int16_t yy_base[10] =
+static const flex_int16_t yy_base[19] =
     {   0,
-        0,    0,    5,    6,    6,    0,    0,    6,    2
+       11,   10,    0,    0,   13,   16,    2,   16,   16,    0,
+       16,    0,   16,    0,   16,    6,    8,    9
     } ;
 
-static const flex_int16_t yy_def[10] =
+static const flex_int16_t yy_def[19] =
     {   0,
-        8,    1,    8,    8,    8,    9,    9,    0,    8
+       16,   16,   15,    3,   15,   15,   15,   15,   15,   17,
+       15,   18,   15,   18,    0,   15,   15,   15
     } ;
 
-static const flex_int16_t yy_nxt[10] =
+static const flex_int16_t yy_nxt[21] =
     {   0,
-        4,    5,    6,    7,    8,    3,    8,    8,    8
+        8,    9,   10,    8,   11,   12,    6,    6,    6,   14,
+       13,   14,   15,    7,    7,    5,   15,   15,   15,   15
     } ;
 
-static const flex_int16_t yy_chk[10] =
+static const flex_int16_t yy_chk[21] =
     {   0,
-        1,    1,    1,    9,    3,    8,    8,    8,    8
+        3,    3,    3,    3,    7,    7,   16,   16,   16,   18,
+       17,   18,    5,    2,    1,   15,   15,   15,   15,   15
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -436,14 +441,17 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "pgm1b.l"
-#line 2 "pgm1b.l"
-	#include"y.tab.h"
-	extern int yylval;
-#line 444 "lex.yy.c"
-#line 445 "lex.yy.c"
+#line 1 "pgm6anew.l"
+#line 2 "pgm6anew.l"
+#include<stdio.h>
+#include<stdlib.h>
+int c1=0,c2=0;
+#line 450 "lex.yy.c"
+
+#line 452 "lex.yy.c"
 
 #define INITIAL 0
+#define CMT 1
 
 #ifndef YY_NO_UNISTD_H
 /* Special case for "unistd.h", since it is non-ANSI. We include it way
@@ -658,9 +666,9 @@ YY_DECL
 		}
 
 	{
-#line 6 "pgm1b.l"
+#line 8 "pgm6anew.l"
 
-#line 664 "lex.yy.c"
+#line 672 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -687,13 +695,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 9 )
+				if ( yy_current_state >= 16 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 6 );
+		while ( yy_base[yy_current_state] != 16 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -719,27 +727,38 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "pgm1b.l"
-{yylval = atoi(yytext); return num; }
+#line 9 "pgm6anew.l"
+{c1++;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "pgm1b.l"
-{return yytext[0]; }
+#line 10 "pgm6anew.l"
+{BEGIN CMT;}
 	YY_BREAK
 case 3:
-/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 9 "pgm1b.l"
-{return 0; }
+#line 11 "pgm6anew.l"
+;
 	YY_BREAK
 case 4:
+/* rule 4 can match eol */
 YY_RULE_SETUP
-#line 10 "pgm1b.l"
+#line 12 "pgm6anew.l"
+{c2++;}
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 13 "pgm6anew.l"
+{c2++; BEGIN 0;}
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 15 "pgm6anew.l"
 ECHO;
 	YY_BREAK
-#line 742 "lex.yy.c"
+#line 760 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
+case YY_STATE_EOF(CMT):
 	yyterminate();
 
 	case YY_END_OF_BUFFER:
@@ -1035,7 +1054,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 9 )
+			if ( yy_current_state >= 16 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1063,11 +1082,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 9 )
+		if ( yy_current_state >= 16 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 8);
+	yy_is_jam = (yy_current_state == 15);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1743,6 +1762,19 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 10 "pgm1b.l"
+#line 15 "pgm6anew.l"
 
+int main(int argc,char **argv)
+{
+  if (argc<2)
+  {
+    printf("Wrong input");
+    exit(0);
+  }
+  yyin = fopen(argv[1],"r");
+  yyout= fopen(argv[2],"w");
+  yylex();
+printf("comment lines:%d",c1+c2);
+return 0;
+}
 

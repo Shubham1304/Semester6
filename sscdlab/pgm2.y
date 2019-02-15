@@ -1,12 +1,13 @@
 %{
 #include<stdio.h>
 #include<stdlib.h>
+int yyerror();
+int yyparse();
 %}
-%token a b
+%token A B
 %%
-input: S '\n' {printf ("Successful Grammar\n"); exit(0);}
-S:a s1 b | b
-s1: ; | a s1
+S: A s1 B |B
+s1: A s1| ;
 %%
 int yyerror()
 {
@@ -17,4 +18,5 @@ int main()
 {
   printf("Enter an expression\n");
   yyparse();
+  printf("Successful grammar");
 }
